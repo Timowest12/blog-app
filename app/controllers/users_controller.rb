@@ -2,6 +2,6 @@ class UsersController < ApplicationController
   def index
   end
   def show
-    @post = params[:id]
+    @user = params[:id]
   end
 end
