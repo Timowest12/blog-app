@@ -14,5 +14,14 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  
+  describe 'GET /show' do
+    before(:each) { get '/posts/show' }
+    it 'show page loads succesfully' do
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'user template includes correct placeholder' do
+      expect(response.body).to include('this is the page for specific posts')
+    end
+  end
 end
