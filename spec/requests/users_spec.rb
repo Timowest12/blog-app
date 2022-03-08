@@ -22,5 +22,4 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('this is the users profile page')
     end
   end
-
 end

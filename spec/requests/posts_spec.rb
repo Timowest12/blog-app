@@ -8,7 +8,6 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    
     it 'index page includes correct placeholder text' do
       expect(response.body).to include('this is the page for specific posts')
     end

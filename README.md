@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Catalog Of My Things (Ruby Capstone Project)
+# Ruby on rais blog
 
 
 ### About the project
