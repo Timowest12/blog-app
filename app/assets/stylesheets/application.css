@@ -13,11 +13,12 @@
  *= require_tree .
  *= require_self
  */
-.profimg{
-    max-width: 100px;
+.profimg {
+  max-width: 100px;
 }
-.profheader{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+.profheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
