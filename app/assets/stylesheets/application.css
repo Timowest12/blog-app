@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+.profimg {
+  max-width: 100px;
+}
+
+.profheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.allpostsbtn {
+  width: auto;
+  margin: 10px 200px;
+}
