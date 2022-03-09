@@ -1,3 +1,53 @@
-<div class="container">
-<%= @user.bio %>
+  <h2>
+  <%= link_to "Go to all users", "/users", class: "button" %>
+</h2>
+<section class="user-profile">
+<div class="d-flex row justify-content-center mt-5">
+
+
+  <div class="profheader card col-md-9 m-1  p-3 d-flex">
+
+
+    <div class='users_img'>
+      <img class='profimg' src='<%=@user.photo%>'>
+    </div>
+
+    <div class="user-info">
+      <h2>User:<%=@user.name%></h2>
+      <p>Number of posts: <%=@user.posts_counter%></p>
+    </div>
+
+    <div class="bio-posts">
+    <h2>Bio:</h2>
+    <p class="bio"> <%=@user.bio%> </p>
+
+
+  </div>
+  <div>
+    <%= link_to "See all posts", "#{@user.id}/posts", class: "button" %>
+  </div>
+
+
+  </div>
+
+  
+
+<% @posts_list.each do |post| %>
+      <div class = "  card col-md-9 m-1  p-3 d-flex" >
+      <% if post.comments_counter %>
+        <a href="/users/<%= @user.id %>/posts/<%= post.id %>"><p class="m-0"><h5> Post# <%=  post.id %> </h5></a>
+      <% else %>  
+        <h5> Post# <%=  post.id %> </h5>
+      <% end%>  
+        <p><%= post.title %></p>
+        <p><%= post.text %></p>
+        <div class = " col-md-11   d-flex align-items-end justify-content-end" >
+      <p class="text-right"> Likes: <%= post.likes_counter ? post.likes_counter : 0  %>&nbsp</p>
+      <p class="text-right"> &nbsp Comments: <%= post.comments_counter ? post.comments_counter : 0 %></p>
+        </div>  
+      </div>
+
+    <%end%>
+
 </div>
+</section> 
