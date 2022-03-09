@@ -22,3 +22,8 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.allpostsbtn {
+  width: auto;
+  margin: 10px 200px;
+}
