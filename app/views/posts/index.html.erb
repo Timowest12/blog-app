@@ -34,6 +34,17 @@
       <p class="text-right"> Likes: <%= post.likes_counter ? post.likes_counter : 0  %>&nbsp</p>
       <p class="text-right"> &nbsp Comments: <%= post.comments_counter ? post.comments_counter : 0 %></p>
         </div>  
+
+  
+
+      </div>
+
+      <div class = "  card col-md-9 m-1  p-3 d-flex" >
+
+  <% post.five_last_comments.each do |comment| %>
+        <p> Username: <%= comment.text %></p>
+        <%end%>
+
       </div>
 
     <%end%>
