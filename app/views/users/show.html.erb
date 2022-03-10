@@ -15,6 +15,7 @@
     <div class="user-info">
       <h2>User:<%=@user.name%></h2>
       <p>Number of posts: <%=@user.posts_counter%></p>
+       <%= link_to "New post", "/users/#{@user.id}/new_post" %>
     </div>
 
   </div>
