@@ -15,9 +15,8 @@ class UsersController < ApplicationController
   def create_post
     @user = User.find(params[:id])
     @postt = params[:post]
-    newpost = Post.create(user_id: params[:id], title: @postt[:title], text: @postt[:text])
+    @newpost = Post.create(user_id: params[:id], title: @postt[:title], text: @postt[:text])
     @posts_list = @user.three_recent_post
     render :show
   end
-
 end
