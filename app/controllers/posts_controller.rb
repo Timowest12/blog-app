@@ -14,11 +14,19 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def new_like
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    newlike = Like.create(post: @post, user_id: 1 )
+
+    render :index
+  end
+
   def create_comment
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @comment = params[:comment]
     newcomment = Comment.create(post: @post, user_id: 1, text: @comment[:text] )
-     render :show
+    render :index
   end
 end
