@@ -20,8 +20,5 @@ class PostsController < ApplicationController
     @comment = params[:comment]
     newcomment = Comment.create(post: @post, user_id: 1, text: @comment[:text] )
      render :show
-    # render html: params[:comment]
-    # response.body # => "Hello"
-    # response.content_type # => "text/html"
   end
 end
