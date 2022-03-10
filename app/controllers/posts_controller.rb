@@ -8,4 +8,20 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
   end
+
+  def new_comment
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+  end
+
+  def create_comment
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    @comment = params[:comment]
+    newcomment = Comment.create(post: @post, user_id: 1, text: @comment[:text] )
+     render :show
+    # render html: params[:comment]
+    # response.body # => "Hello"
+    # response.content_type # => "text/html"
+  end
 end
