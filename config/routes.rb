@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   get '/users/:user_id/:user_id/posts/' => 'posts#index'
   get '/users/:user_id/posts/:id/new_comment' => 'comments#new_comment' #new comment page
   get '/users/:user_id/posts/:id/new_like' => 'likes#new_like' #new like
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

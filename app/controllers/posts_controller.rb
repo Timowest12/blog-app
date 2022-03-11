@@ -19,7 +19,6 @@ class PostsController < ApplicationController
     @newpost = Post.create(user_id: params[:id], title: @postt[:title], text: @postt[:text])
     @posts_list = @user.three_recent_post
     render :index
-    # render html: '<div>html goes here</div>'.html_safe
   end
 
 end
