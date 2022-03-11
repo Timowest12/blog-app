@@ -2,25 +2,25 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /posts' do
-    before(:each) { get '/posts/:id/' }
+    subject { Post.new(title: 'New post', text: 'Hi there', user_id: 2) }
+    before { subject.save }
 
-    it 'index body returns http success' do
-      expect(response).to have_http_status(:success)
+    it 'check if the title is not blank' do
+      subject.title = nil
+      expect(subject).to_not be_valid
     end
 
-    it 'index page includes correct placeholder text' do
-      expect(response.body).to include('this is the page for specific posts')
-    end
-  end
-
-  describe 'GET /show' do
-    before(:each) { get '/posts/show' }
-    it 'show page loads succesfully' do
-      expect(response).to have_http_status(:success)
+    it 'check if the title is not exceeding 250 characters' do
+      subject.title = 'Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world
+      Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello
+      world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world '
+      expect(subject).to_not be_valid
     end
 
-    it 'user template includes correct placeholder' do
-      expect(response.body).to include('this is the page for specific posts')
-    end
-  end
+    # it 'check if it increases the number of comments' do
+    #   prev_posts_counter = subject.posts_counter
+    #   subject.update_posts_counter
+    #   expect(prev_posts_counter).to eq(prev_posts_counter)
+    # end
+  end 
 end
