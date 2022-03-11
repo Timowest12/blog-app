@@ -11,8 +11,14 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'check if the title is not exceeding 250 characters' do
-      subject.title = 'testtestesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestt'
+      subject.title = 'testtestesttesttesttesttesttesttest
+      testtesttesttesttesttesttesttesttest
+      testtesttesttesttesttesttesttesttesttes
+      ttesttesttesttesttesttesttesttesttesttestte
+      sttesttesttesttesttesttesttesttesttesttesttesttesttes
+      ttesttesttesttesttesttesttesttesttesttesttesttesttesttesttes
+      ttesttesttesttesttesttesttesttesttesttesttesttesttesttestt'
       expect(subject).to_not be_valid
     end
-  end 
+  end
 end

@@ -24,9 +24,8 @@ RSpec.describe 'Users', type: :request do
     it 'check if the posts_counter greater than or equal to zero' do
       expect(subject.posts_counter).to be >= 0
     end
-
   end
   describe 'GET /show' do
-    before(:each) { get '/users/show' } 
+    before(:each) { get '/users/show' }
   end
 end
