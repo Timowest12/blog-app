@@ -11,5 +11,4 @@ class UsersController < ApplicationController
   def new_like
     @user = User.find(params[:user_id])
   end
-
 end
