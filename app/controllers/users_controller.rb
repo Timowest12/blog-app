@@ -7,4 +7,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts_list = @user.three_recent_post
   end
+
+  def new_like
+    @user = User.find(params[:user_id])
+  end
 end

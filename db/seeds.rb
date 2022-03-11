@@ -12,9 +12,6 @@ user3 = User.create(name: 'Anna', photo: 'https://images.unsplash.com/photo-1551
 post1 = Post.create(user_id: 1, title: 'Hello', text: 'This is my first post')
 post2 = Post.create(user_id: 2, title: 'Hello 2', text: 'This is my second post')
 post3 = Post.create(user_id: 3, title: 'Hello 3', text: 'This is my third post')
-# post1 = Post.create(user: User.second, title: 'Hello', text: 'This is my second post')
-# post1 = Post.create(user: User.third, title: 'Hello', text: 'This is my third post')
-# post1 = Post.create(user: User.first, title: 'Hello all', text: 'This is my fifth post')
 
 comment1 = Comment.create(post: Post.first, user_id: 1, text: 'Hi Tom!' )
 comment2 = Comment.create(post: Post.first, user_id: 1, text: 'Hi Tom!!!!!!!!' )

@@ -18,7 +18,10 @@
       <p class="text-right">Number of posts: 
         <%= @user.posts_counter ?  @user.posts_counter : 0  %>
       </p>
+   
     </div>  
+
+
   </div>
 
   <% @user.posts.each do |post| %>
@@ -44,6 +47,8 @@
   <% post.five_last_comments.each do |comment| %>
         <p> Username: <%= comment.text %></p>
         <%end%>
+        <%= link_to "Add comment", "/users/#{@user.id}/posts/#{post.id}/new_comment" %>
+        <%= link_to "Add like", "/users/#{@user.id}/posts/#{post.id}/new_like" %>
 
       </div>
 
@@ -57,6 +62,7 @@
       </div>
     </div>
   </div>
+  
 
 </div>
 </section> 
