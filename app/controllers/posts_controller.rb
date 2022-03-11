@@ -22,16 +22,4 @@ class PostsController < ApplicationController
     # render html: '<div>html goes here</div>'.html_safe
   end
 
-  def new_comment
-    @user = User.find(params[:user_id])
-    @post = Post.find(params[:id])
-  end
-
-  def create_comment
-    @user = User.find(params[:user_id])
-    @post = Post.find(params[:id])
-    @comment = params[:comment]
-    @newcomment = Comment.create(post: @post, user_id: 1, text: @comment[:text])
-    render :index
-  end
 end
