@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = params[:comment]
     @newcomment = Comment.create(post: @post, user_id: 1, text: @comment[:text])
-    redirect_to "/users/#{params[:user_id]}/posts"
+    redirect_to "/users/#{params[:user_id]}/posts", flash: { notice: 'Comment created!' }
   end
 
   private

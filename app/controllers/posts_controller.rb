@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts_list = @user.three_recent_post
+    @posts_list = @user.posts.includes(:comments)
   end
 
   def show
@@ -18,7 +18,11 @@ class PostsController < ApplicationController
     @postt = params[:post]
     @newpost = Post.create(user_id: params[:id], title: @postt[:title], text: @postt[:text])
     @posts_list = @user.three_recent_post
-    render :index
+    if @newpost.save
+      render :index, flash: { notice: 'Success! Post has been created!' }
+    else
+      render :new_post, flash: { notice: 'Success! Post has been created!' }
+    end
   end
 
   private
