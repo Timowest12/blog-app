@@ -21,4 +21,9 @@ class PostsController < ApplicationController
     render :index
   end
 
+  private
+
+  def posts_params
+    params.require(:posts).permit(:text)
+  end
 end

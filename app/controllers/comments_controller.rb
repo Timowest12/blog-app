@@ -11,4 +11,10 @@ class CommentsController < ApplicationController
     @newcomment = Comment.create(post: @post, user_id: 1, text: @comment[:text])
     redirect_to "/users/#{params[:user_id]}/posts"
   end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text)
+  end
 end
