@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     if @newpost.save
       render :index, flash: { notice: 'Success! Post has been created!' }
     else
-      render :new_post, flash.now[:error] = "Error, post couldn't be saved!"
+      render :new_post, flash: { notice: 'Success! Post has been created!' }
     end
   end
 
