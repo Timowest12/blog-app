@@ -24,7 +24,10 @@
 
   </div>
 
+  
+
   <% @user.posts.each do |post| %>
+  
       <div class = "  card col-md-9 m-1  p-3 d-flex" >
       <% if post.comments_counter %>
         <a href="/users/<%= @user.id %>/posts/<%= post.id %>"><p class="m-0"><h5> Post# <%=  post.id %> </h5></a>
@@ -37,9 +40,9 @@
       <p class="text-right"> Likes: <%= post.likes_counter ? post.likes_counter : 0  %>&nbsp</p>
       <p class="text-right"> &nbsp Comments: <%= post.comments_counter ? post.comments_counter : 0 %></p>
         </div>  
-
+        <%if can? :destroy, post %>
         <%= link_to 'Delete post', "/users/#{@user.id}/posts/#{post.id}/delete", :class => "btn btn btn-danger btn-lg"%>
-
+        <%end%>
 
 
       </div>
@@ -50,7 +53,9 @@
         <p> 
         <%= User.find(comment.user_id).name %>: <%= comment.text %>
         <%# <button type="button" class="btn btn-danger btn-xs">delete comment</button> %>
-        <%= link_to 'Delete button', "/users/#{@user.id}/posts/#{post.id}/comment/#{comment.id}/delete", :class => "btn btn btn-danger btn-lg"%>
+        <%if can? :destroy, comment %>
+        <%= link_to 'Delete comment', "/users/#{@user.id}/posts/#{post.id}/comment/#{comment.id}/delete", :class => "btn btn btn-danger btn-lg"%>
+        <%end%>
         </p>
         
         <%end%>
