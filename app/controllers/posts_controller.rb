@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def delete
     post = Post.find(params[:id])
     user = User.find(post.user_id)
+    Comment.where(user_id: post.user_id).destroy_all
     Like.where(user_id: post.user_id).destroy_all
     user.posts_counter -= 1
     post.destroy
