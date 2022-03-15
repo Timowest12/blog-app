@@ -9,13 +9,19 @@
     <li class="user profheader card col-md-9 m-1  p-3 d-flex">
       <%=link_to "/users/#{user.id}", :action => 'go' do%>
       <div class='user-img'>
-        <img class='profimg' alt="<%= user.name %>'s photo" src=<%=user.photo%>>
+        <img class='profimg' alt="placeholder" src='https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg'>
       </div>
       <% end %>
 
       <div class='user_item'>
         <h2>User <%= user.name %></h2>
-        <p class='posts-count'>Number of posts: <%= user.posts_counter %></p>
+        <p class='posts-count'>Number of posts: 
+        <%if user.posts_counter === nil%>
+          <%=0%>
+          <%else%>
+          <%=user.posts_counter%>
+          <%end  %>
+        </p>
       </div>
 
     </li>

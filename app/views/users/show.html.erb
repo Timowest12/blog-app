@@ -9,12 +9,16 @@
 
 
     <div class='users_img'>
-      <img class='profimg' src='<%=@user.photo%>'>
+      <img class='profimg' src='https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg'>
     </div>
 
     <div class="user-info">
       <h2>User:<%=@user.name%></h2>
-      <p>Number of posts: <%=@user.posts_counter%></p>
+      <p>Number of posts: <%if @user.posts_counter === nil%>
+          <%=0%>
+          <%else%>
+          <%=@user.posts_counter%>
+          <%end  %></p>
        <%= link_to "New post", "/posts/#{@user.id}/new_post" %>
     </div>
 
