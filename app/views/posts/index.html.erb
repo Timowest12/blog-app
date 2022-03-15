@@ -38,7 +38,9 @@
       <p class="text-right"> &nbsp Comments: <%= post.comments_counter ? post.comments_counter : 0 %></p>
         </div>  
 
-  
+        <%= link_to 'Delete', "/users/#{@user.id}/posts/#{post.id}/delete", :class => "btnbtn btn-danger btn-lg"%>
+
+
 
       </div>
 
