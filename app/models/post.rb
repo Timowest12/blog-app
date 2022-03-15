@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   def update_posts_counter
     author.increment!(:posts_counter)
   end
-  after_destroy :update_posts_counter
+  after_destroy :decrement_posts_counter
 
   def decrement_posts_counter
     author.decrement!(:posts_counter)
