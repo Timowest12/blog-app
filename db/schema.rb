@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2022_03_15_134414) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "role"
     t.string "photo"
     t.text "bio"
     t.integer "posts_counter"
