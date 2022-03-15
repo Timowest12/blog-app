@@ -1,6 +1,7 @@
 <h2>
   <%= link_to "Go to all users", "/users", class: "button" %>
 </h2>
+<%= link_to "New post", "/posts/#{current_user.id}/new_post", class:"nav-link" %>
 <section class="user-profile">
 <div class="d-flex row justify-content-center mt-5">
   <div class= "card text-dark bg-light  p-0 m-1" style="max-width: 7rem" >

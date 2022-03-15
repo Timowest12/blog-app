@@ -35,9 +35,14 @@
       <a class="nav-item nav-link" href="#">
         <%= link_to "edit profile", edit_user_registration_path, class:"nav-link" %>
       </a>
-      <a class="nav-item nav-link" href="#">
+
+      <% if user_signed_in? %>
+
+<a class="nav-item nav-link" href="#">
         <%= link_to "New post", "/posts/#{current_user.id}/new_post", class:"nav-link" %>
       </a>
+<% end %>
+      
 
     </div>
   </div>
