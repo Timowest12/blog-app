@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def create_post
+    @post = current_user
     @user = User.find(params[:id])
     @postt = params[:post]
     @newpost = Post.create(user_id: params[:id], title: @postt[:title], text: @postt[:text])

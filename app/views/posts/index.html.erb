@@ -47,7 +47,7 @@
       <div class = "  card col-md-9 m-1  p-3 d-flex" >
 
   <% post.five_last_comments.each do |comment| %>
-        <p> Username: <%= comment.text %></p>
+        <p> <%= User.find(comment.user_id).name %>: <%= comment.text %></p>
         <%end%>
         <%= link_to "Add comment", "/users/#{@user.id}/posts/#{post.id}/new_comment" %>
         <%= link_to "Add like", "/users/#{@user.id}/posts/#{post.id}/new_like" %>
