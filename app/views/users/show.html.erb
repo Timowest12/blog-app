@@ -15,14 +15,10 @@
     <div class="user-info">
       <h2>User:<%=@user.name%></h2>
       <p>Number of posts: <%if @user.posts_counter === nil%>
-      
           <%=0%>
           <%else%>
           <%=@user.posts_counter%>
           <%end  %></p>
-          <%if can? :destroy, @user.posts.first %>
-       <%= link_to "New post", "/posts/#{@user.id}/new_post" %>
-       <%end%>
     </div>
 
   </div>
