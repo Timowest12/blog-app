@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+  def delete
+    comment = Comment.find(params[:comment_id])
+    comment.destroy
+    redirect_to "/users/#{params[:user_id]}/posts", flash: { notice: 'post deleted!' }
+  end
+
   def new_comment
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
@@ -8,7 +14,7 @@ class CommentsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @comment = params[:comment]
-    @newcomment = Comment.create(post: @post, user_id: 1, text: @comment[:text])
+    @newcomment = Comment.create(post: @post, user_id: current_user.id, text: @comment[:text])
     redirect_to "/users/#{params[:user_id]}/posts", flash: { notice: 'Comment created!' }
   end
 
