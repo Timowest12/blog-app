@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'user index page tests', type: :feature do
   before :each do
     @user1 = User.create(name: 'testname', bio: 'testbio', email: 'user@example.com', password: '123456', id: 1, confirmed_at: Time.now)
-    @user2 = User.create(name: 'testname2', bio: 'testbio2', email: 'user2@example.com', password: '123456', confirmed_at: Time.now)
+    @user2 = User.create(name: 'testname2', bio: 'testbio2', email: 'user2@example.com', password: '123456', id: 2, confirmed_at: Time.now)
   end
 
   it 'correct names shows up in index' do

@@ -3,10 +3,10 @@ require 'rails_helper'
 describe 'user index page tests', type: :feature do
   before :each do
     @user1 = User.create(name: 'testname', bio: 'testbio', email: 'user@example.com', password: '123456', id: 1, confirmed_at: Time.now)
-    @user2 = User.create(name: 'testname2', bio: 'testbio2', email: 'user2@example.com', password: '123456', confirmed_at: Time.now)
-    @post1 = Post.create(user_id: 1, title: 'post1', text: 'posttext1')
-    @post2 = Post.create(user_id: 1, title: 'post2', text: 'posttext2')
-    @post2 = Post.create(user_id: 1, title: 'post3', text: 'posttext3')
+    @user2 = User.create(name: 'testname2', bio: 'testbio2', email: 'user2@example.com', password: '123456', id: 2, confirmed_at: Time.now)
+    @post1 = Post.create(user_id: 1, title: 'post1', text: 'posttext1', id: 1)
+    @post2 = Post.create(user_id: 1, title: 'post2', text: 'posttext2', id: 2)
+    @post2 = Post.create(user_id: 1, title: 'post3', text: 'posttext3', id: 3)
   end
   it 'button to show all exists' do
     visit '/users/sign_in'
