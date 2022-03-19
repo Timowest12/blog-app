@@ -8,11 +8,18 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :user_id
   validates :name, presence: true
 
+  after_create :generate_api_token
+
   def three_recent_post
     posts.order(created_at: :desc).limit(3)
   end
 
   def admin?(requested_role)
     role == requested_role.to_s
+  end
+
+  def generate_api_token
+    self.apitoken = Devise.friendly_token
+    save
   end
 end

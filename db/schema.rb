@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_03_18_173725) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "apitoken"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
