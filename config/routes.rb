@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/:user_id/posts/:id/delete' => 'posts#delete' #delete post
   get '/users/:user_id/posts/' => 'posts#index'
   get '/users/:user_id/:user_id/posts/' => 'posts#index'
+  get '/api/users/:user_id/:user_id/posts/' => 'posts#index' #API posts index
   get '/users/:user_id/posts/:id/new_comment' => 'comments#new_comment' #new comment page
   get '/users/:user_id/posts/:id/comment/:comment_id/delete' => 'comments#delete' #delete comment
   get '/users/:user_id/posts/:id/new_like' => 'likes#new_like' #new like

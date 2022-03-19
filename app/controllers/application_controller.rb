@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-   before_action :authenticate_with_token
+  before_action :authenticate_with_token
   before_action :authenticate_user!
   before_action :update_allowed_parameters, if: :devise_controller?
   before_action :authenticate_user!
@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :surname, :email, :password, :current_password)
     end
   end
+
   def authenticate_with_token
     return unless params[:apitoken]
 
