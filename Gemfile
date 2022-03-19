@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'cancancan', '~> 1.13', '>= 1.13.1'
 
+gem 'oj'
+gem 'rabl'
+
 ruby '3.0.3'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
