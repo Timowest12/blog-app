@@ -16,4 +16,19 @@ Rails.application.routes.draw do
   get '/users/:user_id/posts/:id/new_comment' => 'comments#new_comment' #new comment page
   get '/users/:user_id/posts/:id/comment/:comment_id/delete' => 'comments#delete' #delete comment
   get '/users/:user_id/posts/:id/new_like' => 'likes#new_like' #new like
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: %i[show] do
+        resources :posts, only: %i[index] do
+          resources :comments, only: %i[create index]
+        end
+      end
+    end
+  end
+
+  resources :users, only: [] do
+    member do
+      get 'apitoken'
+    end
+  end
 end
